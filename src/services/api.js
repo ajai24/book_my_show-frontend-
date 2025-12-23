@@ -1,33 +1,60 @@
-const API_BASE_URL = 'http://localhost:8080/api';
+const API_BASE_URL = 'https://book-my-show-backend-vz6x.onrender.com/api';
 
 const api = {
   // User Authentication
   registerUser: async (userData) => {
-    const response = await fetch(`${API_BASE_URL}/user/register`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(userData),
-    });
-    return response.json();
+    try {
+      const response = await fetch(`${API_BASE_URL}/user/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(userData),
+      });
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Registration failed');
+      }
+      return response.json();
+    } catch (error) {
+      console.error('Registration error:', error);
+      throw error;
+    }
   },
 
   loginUser: async (credentials) => {
-    const response = await fetch(`${API_BASE_URL}/user/login`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(credentials),
-    });
-    return response.json();
+    try {
+      const response = await fetch(`${API_BASE_URL}/user/login`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(credentials),
+      });
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Login failed');
+      }
+      return response.json();
+    } catch (error) {
+      console.error('Login error:', error);
+      throw error;
+    }
   },
 
   // Admin Authentication
   registerAdmin: async (adminData) => {
-    const response = await fetch(`${API_BASE_URL}/admin/register`, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(adminData),
-    });
-    return response.json();
+    try {
+      const response = await fetch(`${API_BASE_URL}/admin/register`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(adminData),
+      });
+      if (!response.ok) {
+        const error = await response.json();
+        throw new Error(error.message || 'Admin registration failed');
+      }
+      return response.json();
+    } catch (error) {
+      console.error('Admin registration error:', error);
+      throw error;
+    }
   },
 
   loginAdmin: async (email, password) => {

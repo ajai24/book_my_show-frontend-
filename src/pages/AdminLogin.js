@@ -38,29 +38,54 @@ const AdminLogin = ({ onLogin }) => {
 
   return (
     <div className="container">
-      <h1>🔐 Admin Login</h1>
-      <form onSubmit={handleSubmit} className="form">
-        <input
-          type="email"
-          name="email"
-          placeholder="Admin Email"
-          value={formData.email}
-          onChange={handleChange}
-          className="form-input"
-        />
-        <input
-          type="password"
-          name="password"
-          placeholder="Password"
-          value={formData.password}
-          onChange={handleChange}
-          className="form-input"
-        />
-        <button type="submit" className="btn" disabled={loading}>
-          {loading ? 'Logging in...' : 'Login'}
-        </button>
-      </form>
-      {message && <div className={message.includes('✓') ? 'success' : 'error'}>{message}</div>}
+      <div className="header admin-header">
+        <h1>Admin Login</h1>
+        <p>Sign in to manage theatres, movies, and shows</p>
+      </div>
+
+      <div className="form-container">
+        <div className="admin-login-title">Welcome back</div>
+        <div className="admin-login-subtitle">Use your admin credentials to continue</div>
+
+
+        {message && (
+          <div className={`message ${message.includes('✓') ? 'success-message' : 'error-message'}`}>
+            {message}
+          </div>
+        )}
+
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label>Email</label>
+            <input
+              type="email"
+              name="email"
+              placeholder="admin@example.com"
+              value={formData.email}
+              onChange={handleChange}
+              disabled={loading}
+              required
+            />
+          </div>
+
+          <div className="form-group">
+            <label>Password</label>
+            <input
+              type="password"
+              name="password"
+              placeholder="Enter password"
+              value={formData.password}
+              onChange={handleChange}
+              disabled={loading}
+              required
+            />
+          </div>
+
+          <button type="submit" className="btn" disabled={loading}>
+            {loading ? 'Signing in...' : 'Sign In'}
+          </button>
+        </form>
+      </div>
     </div>
   );
 };

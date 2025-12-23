@@ -761,3 +761,138 @@ table tbody tr:hover {
   font-weight: bold;
   margin: 10px 0 0 0;
 }
+
+.admin-shell {
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+.admin-header {
+  max-width: 980px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.admin-meta {
+  margin-top: 16px;
+  display: flex;
+  justify-content: center;
+}
+
+.admin-meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+}
+
+.admin-tabs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0 18px;
+}
+
+.admin-tab {
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  background: rgba(26, 26, 46, 0.55);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 10px 14px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 600;
+}
+
+.admin-tab:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  border-color: rgba(254, 202, 87, 0.45);
+}
+
+.admin-tab.is-active {
+  background: linear-gradient(135deg, rgba(255, 107, 107, 0.85), rgba(238, 90, 111, 0.85));
+  border-color: rgba(255, 107, 107, 0.6);
+  box-shadow: 0 14px 40px rgba(255, 107, 107, 0.25);
+}
+
+ .admin-login-title {
+  font-size: 26px;
+  font-weight: 800;
+  color: #2d3436;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+ }
+
+ .admin-login-subtitle {
+  color: #636e72;
+  margin-bottom: 14px;
+ }
+
+ .admin-login-hint {
+  background: rgba(26, 26, 46, 0.06);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  color: #2d3436;
+  padding: 12px 14px;
+  border-radius: 12px;
+  margin: 14px 0 18px;
+ }
+
+.admin-content {
+  display: grid;
+  gap: 18px;
+}
+
+.admin-card {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+  overflow: hidden;
+}
+
+.admin-card-header {
+  padding: 22px 22px 0 22px;
+}
+
+.admin-card-header h2 {
+  margin: 0;
+  color: #2d3436;
+  font-size: 22px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.admin-card-header p {
+  margin: 8px 0 0 0;
+  color: #636e72;
+}
+
+.admin-form {
+  padding: 18px 22px 22px 22px;
+}
+
+.admin-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.admin-grid-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .admin-grid-2,
+  .admin-grid-3 {
+    grid-template-columns: 1fr;
+  }
+}
